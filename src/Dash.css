@@ -1,0 +1,169 @@
+/* Dash.css */
+body {
+    background-color: #1a1a2e;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Todo Box */
+.todo-box {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.todo-box:hover {
+    transform: scale(1.02);
+}
+
+/* Title */
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Form */
+.form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Input Field */
+.input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: #0f3460;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.input:focus {
+    background: #1a1a40;
+    transform: scale(1.05);
+}
+
+/* Add Button */
+.add-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #e94560;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+    background: #f06a82;
+    transform: scale(1.1);
+}
+
+/* Todo List */
+.todo-list {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Todo Item */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    background: #0f3460;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+/* Remove Button */
+.remove-btn {
+    background: none;
+    border: none;
+    color: #e94560;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+    color: #ff7784;
+    transform: rotate(15deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .todo-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
